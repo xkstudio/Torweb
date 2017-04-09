@@ -8,11 +8,10 @@ import tornado.ioloop
 import tornado.web
 import tornado.netutil
 import tornado.process
-import platform
 import tornado.options
+import platform
+import db
 from tornado.log import gen_log
-from db import DB
-from db import Redis
 from handler.page import Page404Handler
 from config.settings import *
 from handler import route
@@ -29,11 +28,11 @@ class App(tornado.web.Application):
         #每10秒执行一次
         #tornado.ioloop.PeriodicCallback(self.test, 1 * 10 * 1000).start()
         #封装数据库
-        _db = conf['db']
-        self.db = DB(_db['host'],_db['port'],_db['user'],_db['pass'],_db['db'],_db['charset'])
+        _c = conf['db']
+        self.db = db.DB(_c['host'],_c['port'],_c['user'],_c['pass'],_c['db'],_c['charset'])
         #Redis
-        _redis = conf['redis']
-        R = Redis(_redis['host'],_redis['port'],_redis['db'],_redis['password'])
+        _c = conf['redis']
+        R = db.Redis(_c['host'],_c['port'],_c['db'],_c['password'])
         self.redis = R.Connect()
 
     #def test(self):
