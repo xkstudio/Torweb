@@ -18,7 +18,7 @@ Advanced web application based on Tornado.
 
 ### Torweb Version
 
-v0.0.1
+> **v0.0.1**
 
 ### Python Support
 
