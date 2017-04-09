@@ -20,6 +20,7 @@ Advanced web application based on Tornado.
 
 > **v0.0.1**
 
+
 ### Python Support
 
 - [x] Python 2.6.6
@@ -28,9 +29,11 @@ Advanced web application based on Tornado.
 
 - [ ] Python 3.x Not Test
 
+
 ### Web Framework
 
 * Tornado 4.4.3
+
 
 ### Front Framework
 
@@ -39,6 +42,7 @@ Advanced web application based on Tornado.
 * Font-Awesome 4.7.0
 
 * jQuery 2.2.4
+
 
 ### Database Support
 
@@ -54,3 +58,10 @@ Advanced web application based on Tornado.
 * pip install tornado
 
 * pip install redis
+
+
+### Startup
+
+> python run.py
+
+You can visit the site via http://YouIP:8888/
