@@ -36,7 +36,7 @@ class App(tornado.web.Application):
         self.redis = R.Connect()
 
     #def test(self):
-    #    print "Test"
+    #    self.log.info('Test')
 
 class Torweb():
 
