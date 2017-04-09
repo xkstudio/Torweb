@@ -8,6 +8,6 @@ from tornado.web import authenticated as Auth
 
 class IndexHandler(BaseHandler):
 
-    @Auth
+    #@Auth
     def get(self):
         self.render('index/index.html')
