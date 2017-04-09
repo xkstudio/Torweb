@@ -7,7 +7,7 @@ Advanced web application based on Tornado.
 
 - [x] Non-blocking Network I/O
 
-- [x] Session Support
+- [x] Session Support (Use Redis Storage)
 
 - [x] Cookie(Secure Cookie) Support
 
