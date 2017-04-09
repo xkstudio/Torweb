@@ -13,9 +13,6 @@ class DB:
         self._conn = MySQLdb.connect(host=host, port=port, user=user, passwd=passwd, db=dbname, charset=charset)
         self._cur = self._conn.cursor(cursorclass=MySQLdb.cursors.DictCursor)
 
-    def __del__(self):
-        self.close()
-
     def close(self):
         self._cur.close()
         self._conn.close()
