@@ -32,3 +32,11 @@ v0.0.1
 
 * [Redis](https://pypi.python.org/pypi/redis) 2.10.5
 
+
+### Installation
+
+* yum install MySQL-python
+
+* pip install tornado
+
+* pip install redis
