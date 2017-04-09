@@ -11,11 +11,9 @@ import tornado.process
 import tornado.options
 import platform
 from Log import Log
+from db import DB
 from db import Redis
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, scoped_session
 from handler.page import Page404Handler
-
 from config.settings import settings as Settings
 from config.settings import config as Config
 from handler import route
@@ -32,18 +30,12 @@ class App(tornado.web.Application):
         #tornado.ioloop.PeriodicCallback(self.test, 1 * 10 * 1000).start()
         self.__version__ = conf['version']
         #封装数据库
-        self._db = conf['db']
-        db_engine = create_engine(self.__gen_db_conn(),encoding='utf-8', echo=False)
-        self.db = scoped_session(sessionmaker(bind=db_engine))
+        _db = conf['db']
+        self.db = DB(_db['host'],_db['port'],_db['user'],_db['pass'],_db['db'],_db['charset'])
         #Redis
         _redis = conf['redis']
         R = Redis(_redis['host'],_redis['port'],_redis['db'],_redis['password'])
         self.redis = R.Connect()
-
-    def __gen_db_conn(self):
-        conn = 'mysql+mysqldb://%s:%s@%s:%s/%s?charset=%s' % \
-            (self._db['user'], self._db['pass'], self._db['host'], self._db['port'], self._db['db'], self._db['charset'])
-        return conn
 
     #def test(self):
     #    print "Test"
