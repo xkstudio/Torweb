@@ -10,4 +10,5 @@ class IndexHandler(BaseHandler):
 
     #@Auth
     def get(self):
+        self.log.info('Hell,Index page!') # Log Test
         self.render('index/index.html')
