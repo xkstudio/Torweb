@@ -10,6 +10,8 @@ define("port", default=8888, help="Run on the given port", type=int)
 
 tornado.options.parse_command_line()
 
+# Call options.*** should be after the parse_command_line()
+
 config = {
     'db': {
         'host': '127.0.0.1',
