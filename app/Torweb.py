@@ -48,7 +48,7 @@ class Torweb():
         self.host = config['host']
         self.port = config['port']
         self.urls = route
-        self.settings = settings
+        self.settings = config['app_settings']
         self.config = config
         self.config['version'] = self.__version__
         if platform.system() == "Linux":  #根据操作系统类型来确定是否启用多线程
