@@ -8,14 +8,13 @@ import tornado.ioloop
 import tornado.web
 import tornado.netutil
 import tornado.process
-import tornado.options
 import platform
+import tornado.options
 from Log import Log
 from db import DB
 from db import Redis
 from handler.page import Page404Handler
-from config.settings import settings as Settings
-from config.settings import config as Config
+from config.settings import *
 from handler import route
 
 
@@ -42,15 +41,15 @@ class App(tornado.web.Application):
 
 class Torweb():
 
-    def __init__(self,host,port,processes=4):
+    def __init__(self,processes=4):
         self.__version__ = '0.0.1'
         _log = Log()
         self.log = _log.info
-        self.host = host
-        self.port = port
+        self.host = config['host']
+        self.port = config['port']
         self.urls = route
-        self.settings = Settings
-        self.config = Config
+        self.settings = settings
+        self.config = config
         self.config['version'] = self.__version__
         if platform.system() == "Linux":  #根据操作系统类型来确定是否启用多线程
             self.processes = processes # 当processes>1时，PeriodicCallback定时任务会响相应的执行多次

@@ -2,11 +2,16 @@
 # -*- coding:utf-8 -*-
 # Powered By KK Studio
 
+from tornado.options import define, options
+
+define("host", default='0.0.0.0', help="Listen on the given IP", type=str)
+define("port", default=8889, help="Run on the given port", type=int)
+
 config = {
     'db': {
         'host': '127.0.0.1',
         'port': 3306,
-        'db': 'torweb',
+        'db': 'test',
         'user': 'test',
         'pass': 'test',
         'charset': 'utf8'
@@ -16,7 +21,9 @@ config = {
         'port': 6379,
         'password': '',
         'db': '0'
-    }
+    },
+    'host': options.host,
+    'port': options.port
 }
 
 settings = dict(
