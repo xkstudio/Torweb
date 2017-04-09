@@ -56,7 +56,6 @@ class Torweb():
 
     #多线程模式
     def run(self):
-        tornado.options.parse_command_line()
         self.log.info('Torweb %s' % self.__version__)  # 启动时打印版本号
         self.log.info('Listen Port: %s' % self.port)
         http_sockets = tornado.netutil.bind_sockets(self.port, self.host)

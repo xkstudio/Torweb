@@ -65,3 +65,7 @@ Advanced web application based on Tornado.
 > python run.py
 
 You can visit the site via http://YourIP:8888/
+
+Specify Listen Port:
+
+> python run.py --port=8080

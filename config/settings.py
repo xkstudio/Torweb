@@ -3,9 +3,12 @@
 # Powered By KK Studio
 
 from tornado.options import define, options
+import tornado.options
 
 define("host", default='0.0.0.0', help="Listen on the given IP", type=str)
 define("port", default=8888, help="Run on the given port", type=int)
+
+tornado.options.parse_command_line()
 
 config = {
     'db': {
