@@ -3,7 +3,10 @@
 # Powered By KK Studio
 
 import MySQLdb
+import redis as PyRedis
 
+
+# Wrapper MySQL
 class DB:
 
     def __init__(self,host,port,user,passwd,dbname,charset="utf8"):
@@ -33,3 +36,15 @@ class DB:
 
     def insert(self,sql):
         pass
+
+# Wrapper Redis
+class Redis():
+
+    def __init__(self,host,port=6379,db=0,password=''):
+        self._host = host
+        self._port = port
+        self._db = db
+        self._password = password
+
+    def Connect(self):
+        return PyRedis.Redis(self._host, self._port, self._db, self._password)
