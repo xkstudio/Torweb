@@ -64,4 +64,4 @@ Advanced web application based on Tornado.
 
 > python run.py
 
-You can visit the site via http://YouIP:8888/
+You can visit the site via http://YourIP:8888/
