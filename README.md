@@ -2,17 +2,31 @@
 
 Advanced web application based on Tornado.
 
+
+### Features
+
+-[x] Non-blocking Network I/O
+
+-[x] Session Support
+
+-[x] Cookie(Secure Cookie) Support
+
+-[x] MySQL Support
+
+-[x] Redis Support
+
+
 ### Torweb Version
 
 v0.0.1
 
 ### Python Support
 
-* Python 2.6.6
+-[x] Python 2.6.6
 
-* Python 2.7.x
+-[x] Python 2.7.x
 
-> Python 3.x Not Test
+-[ ] Python 3.x Not Test
 
 ### Web Framework
 
