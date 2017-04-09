@@ -20,9 +20,10 @@ from handler import route
 
 class App(tornado.web.Application):
 
-    def __init__(self,handlers,settings,conf,log):
+    def __init__(self,handlers,conf,log):
         self.__version__ = conf['version']
         self.log = log
+        settings = conf['app_settings']
         settings['default_handler_class'] = Page404Handler  # 404
         tornado.web.Application.__init__(self, handlers, **settings)
         #每10秒执行一次
@@ -45,7 +46,6 @@ class Torweb():
         self.host = config['host']
         self.port = config['port']
         self.urls = route
-        self.settings = config['app_settings']
         self.config = config
         self.config['version'] = self.__version__
         self.log = gen_log
@@ -60,6 +60,6 @@ class Torweb():
         self.log.info('Listen Port: %s' % self.port)
         http_sockets = tornado.netutil.bind_sockets(self.port, self.host)
         tornado.process.fork_processes(num_processes=self.processes)
-        http_server = tornado.httpserver.HTTPServer(request_callback=App(self.urls,self.settings,self.config,self.log), xheaders=True)
+        http_server = tornado.httpserver.HTTPServer(request_callback=App(self.urls,self.config,self.log), xheaders=True)
         http_server.add_sockets(http_sockets)
         tornado.ioloop.IOLoop.instance().start()
