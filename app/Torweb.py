@@ -56,7 +56,6 @@ class Torweb():
         self.__version__ = '0.0.1'
         _log = Log()
         self.log = _log.info
-        #self.log('SaltAdmin Initializing ...')
         self.host = host
         self.port = port
         self.urls = route
