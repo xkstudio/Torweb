@@ -26,7 +26,7 @@ Advanced web application based on Tornado.
 
 - [x] Python 2.7.x
 
-- [] Python 3.x Not Test
+- [ ] Python 3.x Not Test
 
 ### Web Framework
 
