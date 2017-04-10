@@ -87,4 +87,4 @@ handler/YourHandler.py
 
 * Templates
 
-view/*/*.html
+view/{Handler}/{Template}.html
