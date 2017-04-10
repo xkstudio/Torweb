@@ -87,9 +87,14 @@ Add **import YourHandler** to handler/__init__.py and add don't forget to add a 
 
 * Templates
 
-> view/{Handler}/{Template}.html
+> view/YourHandler/YourTemplate.html
 
 * Static Files
 
 > static/css and static/js etc.
 
+* UI Modules
+
+> ui_modules/UIModules.py and view/ui_modules/YourUIModule.html
+
+Via **{{ module YourUIModule(foo) }}** use ui modules in template.
