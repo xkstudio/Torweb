@@ -20,6 +20,8 @@ class BaseHandler(tornado.web.RequestHandler):
         self.init_session()
         # Version
         self.app_version = self.application.__version__
+        # Current Route
+        self.url = self.get_current_route()
 
     # 重载on_finish
     def on_finish(self):
@@ -47,6 +49,11 @@ class BaseHandler(tornado.web.RequestHandler):
     @property
     def log(self):
         return self.application.log
+
+    # 获取当前路由
+    def get_current_route(self):
+        uri = self.request.uri.split('?')
+        return uri[0]
 
     # 数据库
     @property
@@ -129,9 +136,3 @@ class BaseHandler(tornado.web.RequestHandler):
         s = hashlib.md5()
         s.update(text)
         return s.hexdigest()
-
-
-    # 获取当前路由
-    def get_route(self):
-        uri = self.request.uri.split('?')
-        return uri[0]
