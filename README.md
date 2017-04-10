@@ -98,3 +98,7 @@ Add **import YourHandler** to handler/__init__.py and add don't forget to add a 
 > ui_modules/UIModules.py and view/ui_modules/YourUIModule.html
 
 Via **{{ module YourUIModule(foo) }}** use ui modules in template.
+
+* Internationalization
+
+> locale/en_US.py etc.
