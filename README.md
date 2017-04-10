@@ -87,4 +87,9 @@ handler/YourHandler.py
 
 * Templates
 
-view/{Handler}/{Template}.html
+> view/{Handler}/{Template}.html
+
+* Static Files
+
+> static/css and static/js etc.
+
