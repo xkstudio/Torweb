@@ -69,3 +69,14 @@ You can visit the site via http://YourIP:8888/
 Specify Listen Port:
 
 > python run.py --port=8080
+
+
+### Development
+
+* Handlers
+
+handler/YourHandler.py
+
+> Add **import YourHandler** to handler/__init__.py and add don't forget to add a route.
+
+*
