@@ -15,6 +15,7 @@ from tornado.log import gen_log
 from handler.page import Page404Handler
 from config.settings import *
 from handler import route
+from ui_modules import UIModules
 
 
 class App(tornado.web.Application):
@@ -24,6 +25,7 @@ class App(tornado.web.Application):
         self.log = log
         settings = conf['app_settings']
         settings['default_handler_class'] = Page404Handler  # 404
+        settings['ui_modules'] = UIModules
         tornado.web.Application.__init__(self, handlers, **settings)
         #每10秒执行一次
         #tornado.ioloop.PeriodicCallback(self.test, 1 * 10 * 1000).start()
