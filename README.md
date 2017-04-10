@@ -75,15 +75,15 @@ Specify Listen Port:
 
 * Configuration
 
-config/settings.py
+> config/settings.py
 
-> You can config your MySQL and Redis via settings.py.
+You can config your MySQL and Redis via settings.py.
 
 * Handlers
 
-handler/YourHandler.py
+> handler/YourHandler.py
 
-> Add **import YourHandler** to handler/__init__.py and add don't forget to add a route.
+Add **import YourHandler** to handler/__init__.py and add don't forget to add a route.
 
 * Templates
 
