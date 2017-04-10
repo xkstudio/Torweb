@@ -73,6 +73,12 @@ Specify Listen Port:
 
 ### Development
 
+* Configuration
+
+config/settings.py
+
+> You can config your MySQL and Redis via settings.py.
+
 * Handlers
 
 handler/YourHandler.py
