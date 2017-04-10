@@ -81,6 +81,8 @@ Specify Port:
 
 ##### Handlers
 
+* handler/__init__.py
+
 * handler/YourHandler.py
 
 > Add **import YourHandler** to handler/__init__.py and add don't forget to add a route.
