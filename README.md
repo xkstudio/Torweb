@@ -34,7 +34,7 @@ Advanced web application based on Tornado.
 
 ### Web Framework
 
-* Tornado 4.4.3
+* [Tornado](http://www.tornadoweb.org) 4.4.3
 
 
 ### Front Framework
