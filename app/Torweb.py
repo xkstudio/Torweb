@@ -9,6 +9,7 @@ import tornado.web
 import tornado.netutil
 import tornado.process
 import tornado.options
+import tornado.locale
 import platform
 import db
 from tornado.log import gen_log
@@ -36,9 +37,17 @@ class App(tornado.web.Application):
         _c = conf['redis']
         R = db.Redis(_c['host'],_c['port'],_c['db'],_c['password'])
         self.redis = R.Connect()
+        # Load Locale
+        self.__load_locale()
+
 
     #def test(self):
     #    self.log.info('Test')
+
+    # Load Locale
+    def __load_locale(self):
+        tornado.locale.load_translations('locale')
+        tornado.locale.set_default_locale('zh_CN')
 
 class Torweb():
 
