@@ -95,9 +95,9 @@ class BaseHandler(tornado.web.RequestHandler):
         if self.cookie_value:
             self.session_id = self.session_key + self.cookie_value
             self.session = self.get_session()
-            if self.session:
-                # 刷新Seesion过期时间
-                self.redis.expire(self.session_id, self.session_expires)
+            #if self.session:
+            #    # 刷新Seesion过期时间，这一步放到_on_finish方法中执行
+            #    self.redis.expire(self.session_id, self.session_expires)
         else:
             #self.cookie_value = self.gen_session_id()
             #self.set_secure_cookie(self.cookie_name,self.cookie_value)
