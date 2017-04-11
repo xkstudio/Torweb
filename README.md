@@ -112,3 +112,5 @@ Specify Port:
 * locale/en_US.csv
 
 * locale/YourLocale.csv
+
+> Via **{{ _('Locale String') }}** in your template
