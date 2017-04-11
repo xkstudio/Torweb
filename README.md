@@ -15,7 +15,7 @@ Advanced web application based on Tornado.
 
 - [x] Redis Support
 
-- [x] Internationalization Support
+- [x] Internationalization Support (i18n)
 
 
 ### Torweb Version
