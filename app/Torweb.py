@@ -38,16 +38,16 @@ class App(tornado.web.Application):
         R = db.Redis(_c['host'],_c['port'],_c['db'],_c['password'])
         self.redis = R.Connect()
         # Load Locale
-        self.__load_locale()
+        self.__load_locale(settings['default_lang'])
 
 
     #def test(self):
     #    self.log.info('Test')
 
     # Load Locale
-    def __load_locale(self):
+    def __load_locale(self,default_lang):
         tornado.locale.load_translations('locale')
-        tornado.locale.set_default_locale('zh_CN')
+        tornado.locale.set_default_locale(default_lang)
 
 class Torweb():
 
