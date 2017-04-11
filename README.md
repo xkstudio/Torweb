@@ -73,13 +73,13 @@ Specify Port:
 
 ### Development
 
-##### Configuration
+#### Configuration
 
 * config/settings.py
 
 > You can config your MySQL and Redis via settings.py.
 
-##### Handlers
+#### Handlers
 
 * handler/__init__.py
 
@@ -87,11 +87,11 @@ Specify Port:
 
 > Add **import YourHandler** to handler/__init__.py and add don't forget to add a route.
 
-##### Templates
+#### Templates
 
 * view/YourHandler/YourTemplate.html
 
-##### Static Files
+#### Static Files
 
 * static/css
 
@@ -99,7 +99,7 @@ Specify Port:
 
 * static/img
 
-##### UI Modules
+#### UI Modules
 
 * ui_modules/UIModules.py
 
@@ -107,7 +107,7 @@ Specify Port:
 
 > Via **{{ module YourUIModule(foo) }}** use ui modules in template.
 
-##### Internationalization
+#### Internationalization
 
 * locale/en_US.csv
 
