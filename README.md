@@ -109,6 +109,6 @@ Specify Port:
 
 ##### Internationalization
 
-* locale/en_US.py
+* locale/en_US.csv
 
-* locale/YourLocale.py
+* locale/YourLocale.csv
