@@ -27,8 +27,8 @@ class App(tornado.web.Application):
         self.log = log
         settings = conf['app_settings']
         settings['default_handler_class'] = Page404Handler  # 404
+        # Don't Support for Jinja2
         settings['ui_modules'] = UIModules
-        # Don't Support Jinja2
         tornado.web.Application.__init__(self, handlers, **settings)
         # Support for Jinja2
         #tpl_loader = TemplateLoader(settings['template_path'], False)
