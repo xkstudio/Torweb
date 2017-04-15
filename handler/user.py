@@ -7,7 +7,10 @@ from BaseHandler import BaseHandler
 class LoginHandler(BaseHandler):
 
     def get(self):
-        self.render('user/login.html')
+        if not self.session.isGuest:
+            return self.redirect('/') # 已登录则跳转到首页
+        next = self.get_argument("next", "/")
+        self.render('user/login.html', next=next)
 
     def post(self):
         username = self.get_argument("username", None)
