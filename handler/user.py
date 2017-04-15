@@ -10,7 +10,9 @@ class LoginHandler(BaseHandler):
         self.render('user/login.html')
 
     def post(self):
-        pass
+        username = self.get_argument("username", None)
+        password = self.get_argument("password", None)
+        remember = self.get_argument("remember", "no")
         #self.create_session(self,data,remember)
 
     def create_session(self,data,remember):
