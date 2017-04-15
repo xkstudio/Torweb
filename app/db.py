@@ -9,8 +9,8 @@ import redis as PyRedis
 # Wrapper MySQL
 class DB:
 
-    def __init__(self,host,port,user,passwd,dbname,charset="utf8"):
-        self._conn = MySQLdb.connect(host=host, port=port, user=user, passwd=passwd, db=dbname, charset=charset)
+    def __init__(self,host,port,user,passwd,db,charset="utf8"):
+        self._conn = MySQLdb.connect(host=host, port=port, user=user, passwd=passwd, db=db, charset=charset)
         self._cur = self._conn.cursor(cursorclass=MySQLdb.cursors.DictCursor)
 
     def close(self):
