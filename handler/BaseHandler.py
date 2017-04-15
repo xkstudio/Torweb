@@ -74,8 +74,8 @@ class BaseHandler(tornado.web.RequestHandler):
         self.write(data)
 
     # 格式化时间戳
-    def format_time(self,timstamp=None):
-        return time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(timstamp))
+    def format_time(self,timstamp=None,format='%Y-%m-%d %H:%M:%S'):
+        return time.strftime(format, time.localtime(timstamp))
 
 
     # 获取当前登录用户
