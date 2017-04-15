@@ -138,3 +138,8 @@ Tips: **Jinja2 don't support UI Modules**
 * locale/YourLocale.csv
 
 > Via **{{ _('Locale String') }}** in your template
+
+
+### License
+
+This project is under the MIT License. See the [LICENSE](https://github.com/kkstu/Torweb/blob/master/LICENSE) file for the full license text.
