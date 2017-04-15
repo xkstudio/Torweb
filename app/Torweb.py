@@ -37,9 +37,8 @@ class App(tornado.web.Application):
         #tornado.ioloop.PeriodicCallback(self.test, 1 * 10 * 1000).start()
         # Init Database
         self.db = db.DB(**conf['db'])
-        #Redis
-        _c = conf['redis']
-        R = db.Redis(_c['host'],_c['port'],_c['db'],_c['password'])
+        #Init Redis
+        R = db.Redis(**conf['redis'])
         self.redis = R.Connect()
         # Load Locale
         self.__load_locale(settings['default_lang'])
