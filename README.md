@@ -15,6 +15,8 @@ Advanced web application based on Tornado.
 
 - [x] Redis Support
 
+- [x] Jinja2 Support
+
 - [x] Internationalization Support (i18n)
 
 
@@ -46,6 +48,11 @@ Advanced web application based on Tornado.
 * jQuery 2.2.4
 
 
+### Template Egnine
+
+* [Jinja2](http://jinja.pocoo.org/) 2.9+
+
+
 ### Database Support
 
 * [MySQLdb](https://pypi.python.org/pypi/MySQL-python) 1.2.5
@@ -60,6 +67,8 @@ Advanced web application based on Tornado.
 * pip install tornado
 
 * pip install redis
+
+* pip install jinja2
 
 
 ### Startup
