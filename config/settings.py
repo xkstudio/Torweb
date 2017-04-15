@@ -18,7 +18,7 @@ config = {
         'port': 3306,
         'db': 'torweb',
         'user': 'test',
-        'pass': 'test',
+        'passwd': 'test',
         'charset': 'utf8'
     },
     'redis': {
