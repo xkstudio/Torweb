@@ -102,6 +102,17 @@ Specify Port:
 
 * view/YourHandler/YourTemplate.html
 
+> Support for **Jinja2**, you should do this:
+
+```python
+from Template import TemplateLoader
+tpl_loader = TemplateLoader(settings['template_path'], False)
+tornado.web.Application.__init__(self, handlers, template_loader=tpl_loader.Loader(), **settings)
+```
+
+> see the app/Torweb.py for the detail.
+
+
 #### Static Files
 
 * static/css
