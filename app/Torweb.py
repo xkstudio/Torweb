@@ -17,6 +17,7 @@ from handler.page import Page404Handler
 from config.settings import *
 from handler import route
 from ui_modules import UIModules
+#from Template import TemplateLoader
 
 
 class App(tornado.web.Application):
@@ -27,7 +28,11 @@ class App(tornado.web.Application):
         settings = conf['app_settings']
         settings['default_handler_class'] = Page404Handler  # 404
         settings['ui_modules'] = UIModules
+        # Don't Support Jinja2
         tornado.web.Application.__init__(self, handlers, **settings)
+        # Support for Jinja2
+        #tpl_loader = TemplateLoader(settings['template_path'], False)
+        #tornado.web.Application.__init__(self, handlers, template_loader=tpl_loader.Loader(), **settings)
         #每10秒执行一次
         #tornado.ioloop.PeriodicCallback(self.test, 1 * 10 * 1000).start()
         #封装数据库
