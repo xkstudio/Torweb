@@ -118,6 +118,8 @@ Specify Port:
 
 > Via **{{ module YourUIModule(foo) }}** use ui modules in template.
 
+Tips: **Jinja2 don't support UI Modules**
+
 #### Internationalization
 
 * locale/en_US.csv
