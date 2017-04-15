@@ -35,9 +35,8 @@ class App(tornado.web.Application):
         #tornado.web.Application.__init__(self, handlers, template_loader=tpl_loader.Loader(), **settings)
         #每10秒执行一次
         #tornado.ioloop.PeriodicCallback(self.test, 1 * 10 * 1000).start()
-        #封装数据库
-        _c = conf['db']
-        self.db = db.DB(_c['host'],_c['port'],_c['user'],_c['pass'],_c['db'],_c['charset'])
+        # Init Database
+        self.db = db.DB(**conf['db'])
         #Redis
         _c = conf['redis']
         R = db.Redis(_c['host'],_c['port'],_c['db'],_c['password'])
