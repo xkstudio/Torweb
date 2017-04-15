@@ -11,8 +11,9 @@ class LoginHandler(BaseHandler):
 
     def post(self):
         pass
+        #self.create_session(self,data,remember)
 
-    def create_session(self,data,remember,cookie_name):
+    def create_session(self,data,remember):
         sid = self.session.gen_session_id()
         self.session.data = data
         self.session.isGuest = False
@@ -21,7 +22,16 @@ class LoginHandler(BaseHandler):
             expires_days = 15  # Remember Session 15 days
         else:
             expires_days = None
-        self.set_secure_cookie(cookie_name, sid, expires_days)
+        self.set_secure_cookie(self.cookie_name, sid, expires_days)
+
+
+# Sign Out
+class LogoutHandler(BaseHandler):
+    def get(self):
+        self.session.remove()
+        self.clear_cookie(self.cookie_name)
+        self.redirect(self.get_login_url())
+
 
 class RegisterHandler(BaseHandler):
 
