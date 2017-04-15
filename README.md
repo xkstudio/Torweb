@@ -41,11 +41,11 @@ Advanced web application based on Tornado.
 
 ### Front Framework
 
-* Bootstrap 3.3.7
+* Bootstrap 3.3.7 (Not Limit)
 
-* Font-Awesome 4.7.0
+* Font-Awesome 4.7.0 (Not Limit)
 
-* jQuery 2.2.4
+* jQuery 2.2.4 (Not Limit)
 
 
 ### Template Egnine
@@ -110,7 +110,7 @@ tpl_loader = TemplateLoader(settings['template_path'], False)
 tornado.web.Application.__init__(self, handlers, template_loader=tpl_loader.Loader(), **settings)
 ```
 
-> see the app/Torweb.py for the detail.
+> See the app/Torweb.py for the detail.
 
 
 #### Static Files
