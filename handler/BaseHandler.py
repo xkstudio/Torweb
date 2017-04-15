@@ -84,7 +84,10 @@ class BaseHandler(tornado.web.RequestHandler):
 
     # 获取当前登录用户
     def get_current_user(self):
-        return self.session
+        if not self.session.isGuest and self.session.data:
+            return self.session.data
+        else:
+            return None
 
 
     # Session初始化
