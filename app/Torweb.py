@@ -8,7 +8,6 @@ import tornado.ioloop
 import tornado.web
 import tornado.netutil
 import tornado.process
-import tornado.options
 import tornado.locale
 import platform
 import db
