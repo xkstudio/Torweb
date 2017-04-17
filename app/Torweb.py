@@ -76,3 +76,10 @@ class Torweb():
         http_server = tornado.httpserver.HTTPServer(request_callback=App(self.urls,self.config,self.log), xheaders=True)
         http_server.add_sockets(http_sockets)
         tornado.ioloop.IOLoop.instance().start()
+
+
+    # 单进程模式
+    def run_single(self):
+        app = App(self.urls, self.config, self.log)
+        app.listen(self.port)
+        tornado.ioloop.IOLoop.current().start()
