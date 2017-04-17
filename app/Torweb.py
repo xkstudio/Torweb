@@ -77,7 +77,7 @@ class Torweb():
         tornado.ioloop.IOLoop.current().start()
 
 
-    #多线程模式
+    # 多线程模式
     def run_multi(self):
         http_sockets = tornado.netutil.bind_sockets(self.port, self.host)
         tornado.process.fork_processes(num_processes=self.processes)
