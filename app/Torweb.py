@@ -16,7 +16,7 @@ from handler.page import Page404Handler
 from config.settings import *
 from handler import route
 from ui_modules import UIModules
-#from Template import TemplateLoader
+#from Template import TemplateLoader # For Jinja2
 
 
 class App(tornado.web.Application):
