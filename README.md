@@ -23,7 +23,7 @@ Advanced web application based on Tornado.
 
 ## Torweb Version
 
-**v1.0.0**
+**v1.0.2**
 
 
 ## Python Support
