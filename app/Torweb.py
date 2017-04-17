@@ -66,6 +66,8 @@ class Torweb():
             self.processes = processes # 当processes>1时，PeriodicCallback定时任务会响相应的执行多次
         else:
             self.processes = 1
+        self.log.info('Torweb %s' % self.__version__)  # 启动时打印版本号
+        self.log.info('Listen Port: %s' % self.port)
 
 
     # 单进程模式
@@ -77,8 +79,6 @@ class Torweb():
 
     #多线程模式
     def run_multi(self):
-        self.log.info('Torweb %s' % self.__version__)  # 启动时打印版本号
-        self.log.info('Listen Port: %s' % self.port)
         http_sockets = tornado.netutil.bind_sockets(self.port, self.host)
         tornado.process.fork_processes(num_processes=self.processes)
         http_server = tornado.httpserver.HTTPServer(request_callback=App(self.urls,self.config,self.log), xheaders=True)
