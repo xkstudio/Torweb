@@ -9,6 +9,7 @@ import tornado.web
 import tornado.netutil
 import tornado.process
 import tornado.locale
+import tornado.options
 import platform
 import db
 from cache import RCache
@@ -18,7 +19,13 @@ from config.settings import *
 from handler import route
 from ui_modules import UIModules
 #from Template import TemplateLoader # For Jinja2
+from tornado.options import define, options
 
+define("host", default='0.0.0.0', help="Listen on the given IP", type=str)
+define("port", default=8888, help="Run on the given port", type=int)
+
+# Call options.*** should be after the parse_command_line()
+tornado.options.parse_command_line()
 
 class App(tornado.web.Application):
 
@@ -62,8 +69,8 @@ class Torweb():
 
     def __init__(self,processes=4):
         self.__version__ = '1.0.4'
-        self.host = config['host']
-        self.port = config['port']
+        self.host = options.host
+        self.port = options.port
         self.urls = route
         self.config = config
         self.config['version'] = self.__version__
