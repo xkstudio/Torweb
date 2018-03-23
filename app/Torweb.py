@@ -11,7 +11,7 @@ import tornado.process
 import tornado.locale
 import tornado.options
 import platform
-import db
+#import db
 from cache import RCache
 from tornado.log import gen_log
 from handler.page import Page404Handler
@@ -47,7 +47,7 @@ class App(tornado.web.Application):
         #tornado.ioloop.PeriodicCallback(self.test, 1 * 10 * 1000).start()
 
         # Init Database
-        self.db = db.DB(**conf['db'])
+        #self.db = db.DB(**conf['db'])
 
         #Init Redis
         R = RCache(**conf['redis'])
