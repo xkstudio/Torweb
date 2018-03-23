@@ -4,6 +4,11 @@ Torweb
 Advanced web application based on Tornado.
 
 
+## Version
+
+**v1.0.4-Dev**
+
+
 ## Features
 
 - [x] Non-blocking Network I/O
@@ -19,11 +24,6 @@ Advanced web application based on Tornado.
 - [x] Jinja2 Support
 
 - [x] Internationalization Support (i18n)
-
-
-## Torweb Version
-
-**v1.0.3**
 
 
 ## Python Support
