@@ -82,18 +82,30 @@ class Torweb():
         self.log.info('Torweb %s' % self.__version__)  # 启动时打印版本号
         self.log.info('Listen Port: %s' % self.port)
 
+    # Single Process
+    def single_process(self):
+        http_app = App(self.urls, self.config, self.log)
 
-    # 单进程模式
-    def run(self):
-        app = App(self.urls, self.config, self.log)
-        app.listen(self.port)
+        # Single Process 1
+        # http_app.listen(self.port)
+        # tornado.ioloop.IOLoop.current().start()
+
+        # Single Process 2
+        http_server = tornado.httpserver.HTTPServer(request_callback=http_app, xheaders=True)
+        http_server.listen(self.port)
         tornado.ioloop.IOLoop.current().start()
 
-
-    # 多线程模式
-    def run_multi(self):
+    # Multi Process
+    def multi_process(self):
+        http_app = App(self.urls, self.config, self.log)
         http_sockets = tornado.netutil.bind_sockets(self.port, self.host)
         tornado.process.fork_processes(num_processes=self.processes)
-        http_server = tornado.httpserver.HTTPServer(request_callback=App(self.urls,self.config,self.log), xheaders=True)
+        http_server = tornado.httpserver.HTTPServer(request_callback=http_app, xheaders=True)
         http_server.add_sockets(http_sockets)
-        tornado.ioloop.IOLoop.instance().start()
+        tornado.ioloop.IOLoop.current().start()
+
+    def run(self, multi=False):
+        if multi:
+            self.multi_process()
+        else:
+            self.single_process()
