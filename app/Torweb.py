@@ -68,7 +68,7 @@ class App(tornado.web.Application):
 class Torweb():
 
     def __init__(self,processes=4):
-        self.__version__ = '1.0.4'
+        self.__version__ = '1.0.5'
         self.host = options.host
         self.port = options.port
         self.urls = route

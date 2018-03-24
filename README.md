@@ -6,7 +6,7 @@ Advanced web application based on Tornado.
 
 ## Version
 
-**v1.0.4-Dev**
+**v1.0.5-Dev**
 
 
 ## Features
