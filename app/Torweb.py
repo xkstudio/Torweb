@@ -22,7 +22,7 @@ from ui_modules import UIModules
 from tornado.options import define, options
 
 define("host", default='0.0.0.0', help="Listen on the given IP", type=str)
-define("port", default=8888, help="Run on the given port", type=int)
+define("port", default=8081, help="Run on the given port", type=int)
 
 # Call options.*** should be after the parse_command_line()
 tornado.options.parse_command_line()
