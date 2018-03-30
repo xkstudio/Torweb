@@ -95,10 +95,3 @@ class BaseHandler(tornado.web.RequestHandler):
         self.cookie_name = self.settings.get('cookie_name')
         self.sid = self.get_secure_cookie(self.cookie_name)
         self.session = Session(prefix, self.sid, expires, self.redis)
-
-
-    # MD5计算
-    def md5(self,text):
-        s = hashlib.md5()
-        s.update(text)
-        return s.hexdigest()
