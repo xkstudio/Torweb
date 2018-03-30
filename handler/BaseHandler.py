@@ -17,7 +17,7 @@ class BaseHandler(tornado.web.RequestHandler):
         # 当前请求时间
         self.time = int(time.time())
         # Session
-        self.init_session()
+        self._init_session()
         # Version
         self.app_version = self.application.__version__
         # Current Route
@@ -89,7 +89,7 @@ class BaseHandler(tornado.web.RequestHandler):
 
 
     # Session初始化
-    def init_session(self):
+    def _init_session(self):
         prefix = self.settings.get('session_prefix')
         expires = self.settings.get('session_expires')
         self.cookie_name = self.settings.get('cookie_name')
