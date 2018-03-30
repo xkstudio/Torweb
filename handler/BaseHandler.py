@@ -102,14 +102,3 @@ class BaseHandler(tornado.web.RequestHandler):
         s = hashlib.md5()
         s.update(text)
         return s.hexdigest()
-
-
-    # 生成指定长度的随机字符
-    def random_str(self,N=8):
-        str = ''
-        chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
-        length = len(chars) - 1
-        random = Random()
-        for i in range(N):
-            str += chars[random.randint(0, length)]
-        return str
