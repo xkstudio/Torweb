@@ -37,11 +37,13 @@ class App(tornado.web.Application):
 
         # Don't Support for Jinja2
         settings['ui_modules'] = UIModules
-        tornado.web.Application.__init__(self, handlers, **settings)
+        #tornado.web.Application.__init__(self, handlers, **settings)
+        super(App, self).__init__(handlers, **settings)
 
         # Support for Jinja2
         #tpl_loader = TemplateLoader(settings['template_path'], False)
         #tornado.web.Application.__init__(self, handlers, template_loader=tpl_loader.Loader(), **settings)
+        #super(App, self).__init__(handlers, template_loader=tpl_loader.Loader(), **settings)
 
         #每10秒执行一次
         #tornado.ioloop.PeriodicCallback(self.test, 1 * 10 * 1000).start()
