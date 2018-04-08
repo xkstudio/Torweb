@@ -81,6 +81,7 @@ class Torweb():
             self.processes = processes # 当processes>1时，PeriodicCallback定时任务会响相应的执行多次
         else:
             self.processes = 1
+        self.log.info('Tornado Web Server: %s' % tornado.version)
         self.log.info('Torweb %s' % self.__version__)  # 启动时打印版本号
         self.log.info('Listen Port: %s' % self.port)
 
