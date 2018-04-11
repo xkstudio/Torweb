@@ -11,9 +11,10 @@ import tornado.process
 import tornado.locale
 import tornado.options
 import platform
+import logging
 #import db
 from cache import RCache
-from tornado.log import gen_log
+from tornado.log import gen_log, LogFormatter
 from handler.page import Page404Handler
 from config.settings import *
 from handler import route
@@ -76,6 +77,7 @@ class Torweb():
         self.urls = route
         self.config = config
         self.config['version'] = self.__version__
+        self.init_log()
         self.log = gen_log
         if platform.system() == "Linux":  #根据操作系统类型来确定是否启用多线程
             self.processes = processes # 当processes>1时，PeriodicCallback定时任务会响相应的执行多次
@@ -84,6 +86,14 @@ class Torweb():
         self.log.info('Tornado Web Server: %s' % tornado.version)
         self.log.info('Torweb %s' % self.__version__)  # 启动时打印版本号
         self.log.info('Listen Port: %s' % self.port)
+
+    def init_log(self):
+        datefmt = '%Y-%m-%d %H:%M:%S'
+        fmt = '%(color)s[%(levelname)1.1s %(asctime)s %(module)s:%(lineno)d]%(end_color)s %(message)s'
+        formatter = LogFormatter(color=True, datefmt=datefmt, fmt=fmt)
+        root_log = logging.getLogger()
+        for logHandler in root_log.handlers:
+            logHandler.setFormatter(formatter)
 
     # Single Process
     def single_process(self):
