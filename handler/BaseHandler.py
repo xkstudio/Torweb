@@ -80,7 +80,7 @@ class BaseHandler(tornado.web.RequestHandler):
         return time.strftime(format, time.localtime(timstamp))
 
 
-    # 获取当前登录用户
+    # 获取当前登录用户信息，该方法为重写方法
     def get_current_user(self):
         if not self.session.isGuest and self.session.data:
             return self.session.data
