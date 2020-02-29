@@ -87,7 +87,7 @@ Specify Port:
 
 #### Configuration
 
-* config/settings.py
+* [config/settings.py](config/settings.py)
 
 > You can config your MySQL and Redis via settings.py.
 
