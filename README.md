@@ -58,7 +58,7 @@ Advanced web application based on Tornado.
 
 * [MySQLdb](https://pypi.python.org/pypi/MySQL-python) 1.2.5
 
-* [Redis](https://pypi.python.org/pypi/redis) 2.10.5
+* [Redis](https://pypi.python.org/pypi/redis) >= 2.10.0
 
 
 ## Installation
