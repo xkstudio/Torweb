@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding:utf8 -*-
-# Powered By KK Studio
+# Powered By XK Studio
 
 from app.Torweb import Torweb
 
